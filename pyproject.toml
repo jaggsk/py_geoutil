@@ -1,0 +1,11 @@
+[project]
+name = "py_geoutil"
+version = "0.0.1"
+dependencies = ["numpy == 2.4.0",
+		"pandas>=3.0.1"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
