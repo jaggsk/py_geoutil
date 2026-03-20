@@ -99,3 +99,60 @@ def rotate_points(points, angle_deg, origin=(0, 0)):
 
     # Translate back
     return rotated + origin
+
+def meshgrid_properties(grid_x = None,grid_y=None):
+
+    '''
+    Creates a dictionary summarising x and y meshgrid properties
+
+    Parameters
+    ----------
+    grid_x : float, np.meshgrid of x coords
+    grid_y : float, np.meshgrid of y coords
+
+    Preconditions
+    -------------
+    Inputs must be x and y meshgrids - x and y grids must be same size
+    
+    Raises
+    ------
+    None
+
+    Examples
+    --------
+    df_rot = define_grid(x_origin=0,y_origin=0,no_x_points = 20, no_y_points = 20,x_int=10,y_int=10,angle_rot = 10)
+    
+    KJAGGS Mar 2026
+    '''
+
+    meshgrid_dict = {}
+
+    #Origin
+    meshgrid_dict["x0"] = grid_x[0,0]
+    meshgrid_dict["y0"] = grid_y[0,0]
+
+    #Number of x columns and y rows
+    meshgrid_dict["ny"] , meshgrid_dict["nx"] = grid_x.shape
+
+    #X and Y direction vectors
+    dx_vec = np.array([grid_x[0,1] - grid_x[0,0], grid_y[0,1] - grid_y[0,0]])
+    dy_vec = np.array([grid_x[1,0] - grid_x[0,0], grid_y[1,0] - grid_y[0,0]])
+    meshgrid_dict["dx_vector"] = dx_vec 
+    meshgrid_dict["dy_vector"] = dy_vec 
+
+    #calculate angle of rotation for y coords counter clockwise from 90 deg E
+    theta = np.arctan2(dx_vec[1], dx_vec[0])  # radians
+    meshgrid_dict["rotation"] =np.degrees(theta)-90
+
+    #calculate increment between
+    meshgrid_dict["x_inc"] = np.sqrt(np.square(grid_x[0,1] - grid_x[0,0]) +  np.square(grid_y[0,1] - grid_y[0,0]))
+    meshgrid_dict["y_inc"] = np.sqrt(np.square(grid_x[1,0] - grid_x[0,0]) +  np.square(grid_y[1,0] - grid_y[0,0]))
+    
+    meshgrid_dict["min_x"] = grid_x.min()
+    meshgrid_dict["max_x"] = grid_x.max()
+    meshgrid_dict["min_y"] = grid_y.min()
+    meshgrid_dict["max_y"] = grid_y.max()
+
+    #print(dx_vec,dy_vec,rotation_deg,angle_deg)
+
+    return meshgrid_dict
