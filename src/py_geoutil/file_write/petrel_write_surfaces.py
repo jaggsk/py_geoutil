@@ -42,9 +42,9 @@ def write_irap_ascii(filename=None, Z=None, x0=None, y0=None, nx=None,ny=None,dx
 
     with open(filename, "w") as f:
         # Header
-        f.write(f"-996 {nx} {dx:.6f} {dy:.6f}\n")
+        f.write(f"-996 {ny} {dx:.6f} {dy:.6f}\n")
         f.write(f"{x_min:.6f} {x_max:.6f} {y_min:.6f} {y_max:.6f}\n")
-        f.write(f"{ny} {angle:.6f} {x0:.6f} {y0:.6f}\n")
+        f.write(f"{nx} {angle:.6f} {x0:.6f} {y0:.6f}\n")
         f.write(f"0 0 0 0 0 0 0\n")
         
         # flatten row-wise (row-major order)
