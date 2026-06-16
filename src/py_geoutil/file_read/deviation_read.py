@@ -1,10 +1,6 @@
 import pandas as pd
 import re
 
-inpath = "O:\\Data\\Wells\\UK_Q48\\19a\\W11\\Deviation\\48_19a-W11_WDD__901326.p72"
-
-
-
 def read_ukooa_deviation(infile=None):
 
     header_pattern = r'^(H\d+)\s+(.+?):\s+(.*)$'
@@ -41,5 +37,3 @@ def read_ukooa_deviation(infile=None):
 
         return df
     
-df = read_ukooa_deviation(infile=inpath)
-print(df)
