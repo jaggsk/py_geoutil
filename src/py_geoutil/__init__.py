@@ -8,7 +8,7 @@ from .file_read.petrel_read import petrel_formtops_read
 from .file_read.las_read import readlasfile
 
 from .utils.errors import (
-    MyPackageError,
+    PyGeoutilError,
     ValidationError,
     ConfigurationError,
     DataError,
