@@ -5,9 +5,11 @@ from .file_write.petrel_write_surfaces import write_irap_ascii
 from .file_read.petrel_read import petrel_formtops_read
 from .file_read.las_read import readlasfile
 from .utils.errors import MyPackageError, ValidationError,ConfigurationError,DataError
+from .conversions.conversions import *
+from .volumetrics import giip_calc,stoiip_calc
 #from .variogram.normal_score_transform import  NormalScoreTransform
 #from .variogram.poly_trend import polynomial_detrend
 
-__all__ =  ["rotate_points","create_grid_points","meshgrid_properties","write_irap_ascii","pythagoras_calc","petrel_formtops_read","inclination_xyz","readlasfile","MyPackageError", "ValidationError","ConfigurationError","DataError"]
+__all__ =  ["rotate_points","create_grid_points","meshgrid_properties","write_irap_ascii","pythagoras_calc","petrel_formtops_read","inclination_xyz","readlasfile","MyPackageError", "ValidationError","ConfigurationError","DataError","giip_calc"]
 
 __version__ = "0.0.6"
