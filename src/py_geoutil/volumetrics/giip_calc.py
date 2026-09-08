@@ -1,5 +1,5 @@
 from ..utils.validation import validate_string,validate_number,validate_fraction
-from ..conversions import convert_ft3_m3,convert_m3_ft3,convert_sm3_boe,convert_cf_boe
+from ..conversions.conversions import convert_ft3_m3,convert_m3_ft3,convert_sm3_boe,convert_cf_boe
 
 def calculate_giip(grv:float = None,
                    grv_units: str = "ft3",
