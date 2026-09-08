@@ -1,4 +1,4 @@
-from .errors import ValidationError, MyPackageError
+from .errors import ValidationError, PyGeoutilError
 from numbers import Real
 
 def validate_number(value, name="value"):
