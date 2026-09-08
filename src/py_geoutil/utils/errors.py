@@ -3,16 +3,16 @@ class PyGeoutilError(Exception):
     pass
 
 
-class ValidationError(MyPackageError):
+class ValidationError(PyGeoutilError):
     """Raised when input validation fails."""
     pass
 
 
-class ConfigurationError(MyPackageError):
+class ConfigurationError(PyGeoutilError):
     """Raised when configuration is invalid."""
     pass
 
 
-class DataError(MyPackageError):
+class DataError(PyGeoutilError):
     """Raised when input data is invalid or incomplete."""
     pass
