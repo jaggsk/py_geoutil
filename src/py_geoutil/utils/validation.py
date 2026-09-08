@@ -1,5 +1,5 @@
 from .errors import ValidationError, MyPackageError
-
+from numbers import Real
 
 def validate_number(value, name="value"):
     if not isinstance(value, (float, int)):

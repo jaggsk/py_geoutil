@@ -1,4 +1,4 @@
-class MyPackageError(Exception):
+class PyGeoutilError(Exception):
     """Base exception for the package."""
     pass
 
