@@ -5,7 +5,7 @@ from .file_write.petrel_write_surfaces import write_irap_ascii
 from .file_read.petrel_read import petrel_formtops_read
 from .file_read.las_read import readlasfile
 from .utils.errors import MyPackageError, ValidationError,ConfigurationError,DataError
-from .conversions.conversions import *
+from .conversions.conversions import convert_m2_to_acres,convert_km2_to_acres,convert_ft2_to_acres,convert_ft_to_m,convert_ft3_m3,convert_m3_ft3, convert_cf_boe, convert_sm3_boe
 from .volumetrics import giip_calc,stoiip_calc
 #from .variogram.normal_score_transform import  NormalScoreTransform
 #from .variogram.poly_trend import polynomial_detrend

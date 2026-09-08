@@ -1,16 +1,16 @@
-def m2_to_acres(value):
+def convert_m2_to_acres(value):
 
     return value / 4,046.8564224
 
-def km2_to_acres(value):
+def convert_km2_to_acres(value):
 
     return value * 247.105
 
-def ft2_to_acres(value):
+def convert_ft2_to_acres(value):
 
     return value / 43560
 
-def ft_to_m(value):
+def convert_ft_to_m(value):
 
     return value * 0.3048
 
