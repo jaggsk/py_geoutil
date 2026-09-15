@@ -17,7 +17,7 @@ from .coordinates.create_meshgrid import (
 from .file_write.petrel_write_surfaces import write_irap_ascii
 
 from .file_read.petrel_read import (
-    petrel_formtops_read
+    petrel_formtops_read,
     petrel_irap_classic_grid_read
 )
 from .file_read.las_read import readlasfile
