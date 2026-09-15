@@ -14,6 +14,10 @@ from .coordinates.create_meshgrid import (
     create_indexed_meshgrid
 )
 
+from .coordinates.grid_coordinates_utilities import (
+    corner_points_from_origin
+)
+
 from .file_write.petrel_write_surfaces import write_irap_ascii
 
 from .file_read.petrel_read import (
