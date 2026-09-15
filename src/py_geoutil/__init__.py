@@ -11,7 +11,7 @@ from .coordinates.create_meshgrid import (
     create_indexed_meshgrid
 )
 
-from coordinates.coordinate_utility import (
+from .coordinates.coordinate_utility import (
     pythagoras_calc,
     corner_points_from_origin
 )
