@@ -71,6 +71,8 @@ __all__ = [
     "inclination_xyz",
     "readlasfile",
 
+    "corner_points_from_origin",
+
     "MyPackageError","ValidationError","ConfigurationError","DataError",
 
     "validate_number", "validate_string","validate_fraction","validate_equal","validate_pattern","validate_positive",
