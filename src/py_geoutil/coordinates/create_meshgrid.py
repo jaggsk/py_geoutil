@@ -1,4 +1,5 @@
 import numpy as np
+from numbers import Integral, Real
 from ..utils.validation import validate_type,validate_required,validate_positive
 
 def create_indexed_meshgrid(x0=None,y0=None,nx=None,ny=None,dx=None,dy=None, angle_rot = 0.0):
@@ -31,10 +32,10 @@ def create_indexed_meshgrid(x0=None,y0=None,nx=None,ny=None,dx=None,dy=None, ang
     validate_required(x0=x0,y0=y0,nx=nx,ny=ny,dx=dx,dy=dy, angle_rot = angle_rot)
 
     # Types
-    validate_type(x0, Integral, "n_col")
-    validate_type(y0, Integral, "n_row")
-    validate_type(nx, Real, "Number of X Points")
-    validate_type(ny, Real, "Number of Y Points")
+    validate_type(x0, Real, "n_col")
+    validate_type(y0, Real, "n_row")
+    validate_type(nx, Integral, "Number of X Points")
+    validate_type(ny, Integral, "Number of Y Points")
     validate_type(dx, Real, "dx")
     validate_type(dy, Real, "dy")
     validate_type(angle_rot, Real, "Angle of Rotation")
