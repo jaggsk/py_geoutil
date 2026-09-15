@@ -1,10 +1,18 @@
 from .coordinates.pythagoras import (
     pythagoras_calc
-    create_meshgrid
-    inclination_xyz
 )
+
 from .coordinates.xyz_inclination import inclination_xyz
-from .coordinates.rotate_coords import (rotate_points, create_grid_points, meshgrid_properties)
+
+from .coordinates.rotate_coords import (
+    rotate_points,
+    create_grid_points, 
+    meshgrid_properties
+)
+
+from .coordinates.create_meshgrid import (
+    create_indexed_meshgrid
+)
 
 from .file_write.petrel_write_surfaces import write_irap_ascii
 
