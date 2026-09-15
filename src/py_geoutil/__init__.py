@@ -16,7 +16,10 @@ from .coordinates.create_meshgrid import (
 
 from .file_write.petrel_write_surfaces import write_irap_ascii
 
-from .file_read.petrel_read import petrel_formtops_read
+from .file_read.petrel_read import (
+    petrel_formtops_read
+    petrel_irap_classic_grid_read
+)
 from .file_read.las_read import readlasfile
 
 from .utils.errors import (
@@ -57,7 +60,7 @@ from .volumetrics.giip_calc import (
 __all__ = [
     "rotate_points",
     "create_grid_points",
-    "meshgrid_properties",
+    "meshgrid_properties","create_indexed_meshgrid"
     "write_irap_ascii",
     "pythagoras_calc",
     "petrel_formtops_read",
@@ -68,6 +71,8 @@ __all__ = [
 
     "validate_number", "validate_string","validate_fraction","validate_equal","validate_pattern","validate_positive",
     "validate_type","validate_required","validate_file_path","validate_file_path_format"
+
+    "petrel_irap_classic_grid_read","petrel_formtops_read",
 
     "calculate_giip",
 ]
