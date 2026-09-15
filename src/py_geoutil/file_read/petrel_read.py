@@ -38,7 +38,7 @@ def petrel_irap_classic_grid_read(filename, return_meshgrid=False):
     grid_definition = {}
 
     validate_file_path(filename)
-    validate_boolean(return_meshgrid, value="Meshgrid/df output selector")
+    validate_boolean(return_meshgrid, name="Meshgrid/df output selector")
 
     with open(filename, "r") as f:
 
