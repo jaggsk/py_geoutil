@@ -1,6 +1,3 @@
-from .coordinates.pythagoras import (
-    pythagoras_calc
-)
 
 from .coordinates.xyz_inclination import inclination_xyz
 
@@ -14,7 +11,8 @@ from .coordinates.create_meshgrid import (
     create_indexed_meshgrid
 )
 
-from .coordinates.grid_coordinates_utilities import (
+from coordinates.coordinate_utility import (
+    pythagoras_calc,
     corner_points_from_origin
 )
 
@@ -66,12 +64,12 @@ __all__ = [
     "create_grid_points",
     "meshgrid_properties","create_indexed_meshgrid"
     "write_irap_ascii",
-    "pythagoras_calc",
+    
     "petrel_formtops_read",
     "inclination_xyz",
     "readlasfile",
 
-    "corner_points_from_origin",
+    "corner_points_from_origin","pythagoras_calc",
 
     "MyPackageError","ValidationError","ConfigurationError","DataError",
 
