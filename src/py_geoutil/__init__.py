@@ -1,4 +1,8 @@
-from .coordinates.pythagoras import pythagoras_calc
+from .coordinates.pythagoras import (
+    pythagoras_calc
+    create_meshgrid
+    inclination_xyz
+)
 from .coordinates.xyz_inclination import inclination_xyz
 from .coordinates.rotate_coords import (rotate_points, create_grid_points, meshgrid_properties)
 

@@ -83,7 +83,7 @@ def validate_positive(value, name="value", allow_zero=False):
             f"{name} must be {requirement}; got {value}"
         )
 
-    def validate_type(value, expected_type, name="value"):
+def validate_type(value, expected_type, name="value"):
     """Check that a value has the expected type."""
 
     if not isinstance(value, expected_type):
@@ -114,3 +114,11 @@ def validate_file_path_format(infile, path):
     if not isinstance(infile, path):
         raise ValidationError(
             f"{infile} & {path} must be a pathlib.Path.")
+
+def validate_boolean(value, name="value"):
+    """Check that a value is a boolean."""
+    
+    if not isinstance(value, bool):
+        raise ValidationError(
+            f"{name} must be a boolean; got {type(value).__name__}"
+        )
