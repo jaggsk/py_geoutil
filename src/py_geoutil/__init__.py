@@ -14,6 +14,19 @@ from .utils.errors import (
     DataError,
 )
 
+from .utils.validation import (
+    validate_number,
+    validate_string,
+    validate_fraction,
+    validate_equal,
+    validate_pattern,
+    validate_positive,
+    validate_type,
+    validate_required,
+    validate_file_path,
+    validate_file_path_format
+)
+
 from .conversions.conversions import (
     convert_m2_to_acres,
     convert_km2_to_acres,
@@ -41,7 +54,10 @@ __all__ = [
 
     "MyPackageError","ValidationError","ConfigurationError","DataError",
 
+    "validate_number", "validate_string","validate_fraction","validate_equal","validate_pattern","validate_positive",
+    "validate_type","validate_required","validate_file_path","validate_file_path_format"
+
     "calculate_giip",
 ]
 
-__version__ = "0.0.7"
+__version__ = "0.0.8"

@@ -16,3 +16,7 @@ class ConfigurationError(PyGeoutilError):
 class DataError(PyGeoutilError):
     """Raised when input data is invalid or incomplete."""
     pass
+
+class FileNotFoundError(PyGeoutilError):
+    """Raised when input data is invalid or incomplete."""
+    pass
