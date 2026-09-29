@@ -211,3 +211,51 @@ def petrel_formtops_read(tops_path = None,print_info = False):
     df.columns = columns_list
 
     return df 
+
+    def petrel_charisma_3d_read(filename):
+
+    '''    
+    Routine to read Petrel Format Charisma Interpretation File to Pandas
+
+    Arguments:
+    filename (float): full file location of selected tops file
+
+    
+    Returns:
+    Pandas Dataframe containing IL,XL,X,Y,Z
+
+    Raises:
+    FileNotFoundError if not a valid user supplied filepath
+    ValidationError if input file contains a line that doesn't match the correct charisma format
+
+    Example:
+    df = petrel_charisma_3d_read(filename = infile)
+
+    PRECONDITIONS: exported file is a valid charimas interpretation format.
+    ONLY THE FIRST DATA (Z) COLUM IS EXTRACTED
+    KJAGGS Sep 2026
+    
+    '''
+
+
+    pg.validate_file_path(filename)
+
+    charisma_pattern = r"^INLINE :\s+(\d+)\s+XLINE\s:\s+(\d+)\s+(\d+.\d+)\s+(\d+.\d+)\s+(\d+.\d+)"
+    records = []
+
+    filecnt = 0
+
+    with open(filename, "r") as f:
+        for line_number, line in enumerate(f, start=1):
+            #lines = f.readlines()
+        
+    
+            line_match = pg.validate_pattern(line,charisma_pattern,f"Invalid line in Charisma file at line {line_number}")
+            #if line_match:
+            records.append([line_match.group(1),line_match.group(2),line_match.group(3),line_match.group(4),line_match.group(5)])
+            #    row_match = re.match(charisma_pattern,line)
+            #    print(row_match.group(0))
+            #filecnt += 1
+        #df = pd.DataFrame(records)
+
+    return pd.DataFrame(records,columns=["INLINE","XLINE","X","Y","Z"])

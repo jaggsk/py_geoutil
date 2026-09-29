@@ -20,7 +20,8 @@ from .file_write.petrel_write_surfaces import write_irap_ascii
 
 from .file_read.petrel_read import (
     petrel_formtops_read,
-    petrel_irap_classic_grid_read
+    petrel_irap_classic_grid_read,
+    petrel_charisma_3d_read
 )
 from .file_read.las_read import readlasfile
 
@@ -74,9 +75,9 @@ __all__ = [
     "MyPackageError","ValidationError","ConfigurationError","DataError",
 
     "validate_number", "validate_string","validate_fraction","validate_equal","validate_pattern","validate_positive",
-    "validate_type","validate_required","validate_file_path","validate_file_path_format"
+    "validate_type","validate_required","validate_file_path","validate_file_path_format",
 
-    "petrel_irap_classic_grid_read","petrel_formtops_read",
+    "petrel_irap_classic_grid_read","petrel_formtops_read", "petrel_charisma_3d_read",
 
     "calculate_giip",
 ]
