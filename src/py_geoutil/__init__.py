@@ -16,7 +16,7 @@ from .coordinates.coordinate_utility import (
     corner_points_from_origin
 )
 
-from .file_write.petrel_write_surfaces import write_irap_ascii
+from .file_write.petrel_write import write_irap_ascii
 
 from .file_read.petrel_read import (
     petrel_formtops_read,

@@ -212,7 +212,7 @@ def petrel_formtops_read(tops_path = None,print_info = False):
 
     return df 
 
-    def petrel_charisma_3d_read(filename):
+def petrel_charisma_3d_read(filename):
 
     '''    
     Routine to read Petrel Format Charisma Interpretation File to Pandas
@@ -220,7 +220,6 @@ def petrel_formtops_read(tops_path = None,print_info = False):
     Arguments:
     filename (float): full file location of selected tops file
 
-    
     Returns:
     Pandas Dataframe containing IL,XL,X,Y,Z
 
@@ -238,7 +237,7 @@ def petrel_formtops_read(tops_path = None,print_info = False):
     '''
 
 
-    pg.validate_file_path(filename)
+    validate_file_path(filename)
 
     charisma_pattern = r"^INLINE :\s+(\d+)\s+XLINE\s:\s+(\d+)\s+(\d+.\d+)\s+(\d+.\d+)\s+(\d+.\d+)"
     records = []
@@ -250,7 +249,7 @@ def petrel_formtops_read(tops_path = None,print_info = False):
             #lines = f.readlines()
         
     
-            line_match = pg.validate_pattern(line,charisma_pattern,f"Invalid line in Charisma file at line {line_number}")
+            line_match = validate_pattern(line,charisma_pattern,f"Invalid line in Charisma file at line {line_number}")
             #if line_match:
             records.append([line_match.group(1),line_match.group(2),line_match.group(3),line_match.group(4),line_match.group(5)])
             #    row_match = re.match(charisma_pattern,line)
