@@ -258,3 +258,76 @@ def petrel_charisma_3d_read(filename):
         #df = pd.DataFrame(records)
 
     return pd.DataFrame(records,columns=["INLINE","XLINE","X","Y","Z"])
+
+
+def petrel_pointset_read(filename):
+
+    '''    
+    Routine to read Petrel Pointset file to Pandas Dataframe
+
+    Arguments:
+    filename (float): full file location of selected tops file
+    
+    Returns:
+    Pandas Dataframe containing all columns from pointset data
+
+    Raises:
+    FileNotFoundError if not a valid user supplied filepath
+
+    Example:
+    X,Y,I,J,Z  = read_petrel_irap_classic_grid(infile,return_meshgrid=True)
+
+    PRECONDITIONS: exported file is a valid Petrel pointset.
+    KJAGGS Oct 2026
+    
+    '''
+
+    field_names = []
+    grid_definition = {}
+
+    validate_file_path(filename)
+    
+    
+    with open(filename, "r") as f:
+        lines = f.readlines()
+
+    # Find header boundaries
+    start = lines.index("BEGIN HEADER\n") + 1
+    end = lines.index("END HEADER\n")
+
+    # Extract column names and types
+    columns = []
+    dtypes = {}
+
+    for line in lines[start:end]:
+        line = line.strip()
+
+        if "," in line:
+            dtype, col_name = line.split(",", 1)
+        else:
+            dtype = "FLOAT"  # Default for columns without explicit type
+            col_name = line
+
+        columns.append(col_name)
+
+        if dtype.upper() == "STRING":
+            dtypes[col_name] = str
+        elif dtype.upper() == "FLOAT":
+            dtypes[col_name] = float
+
+    # Read data
+    df = pd.read_csv(
+        filename,
+        skiprows=end + 1,
+        sep=r"\s+",
+        header=None,
+        names=columns,
+        dtype=dtypes,
+        engine="python",
+        quotechar='"'
+    )
+
+    for col in df.select_dtypes(include=["object", "string"]).columns:
+        df[col] = df[col].str.strip('"')
+
+    return df
