@@ -8,7 +8,8 @@ from .coordinates.rotate_coords import (
 )
 
 from .coordinates.create_meshgrid import (
-    create_indexed_meshgrid
+    create_indexed_meshgrid,
+    meshgrid_extract
 )
 
 from .coordinates.coordinate_utility import (
@@ -74,7 +75,7 @@ from .volumetrics.giip_calc import (
 __all__ = [
     "rotate_points",
     "create_grid_points",
-    "meshgrid_properties","create_indexed_meshgrid"
+    "meshgrid_properties","create_indexed_meshgrid,meshgrid_extract"
     
     "write_irap_ascii",
     "write_petrel_points",
