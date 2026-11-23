@@ -16,7 +16,11 @@ from .coordinates.coordinate_utility import (
     corner_points_from_origin
 )
 
-from .file_write.petrel_write import write_irap_ascii
+from .file_write.petrel_write import (
+    write_irap_ascii,
+    write_petrel_points,
+    write_ffascii
+    )
 
 from .file_read.petrel_read import (
     petrel_formtops_read,
@@ -24,6 +28,7 @@ from .file_read.petrel_read import (
     petrel_charisma_3d_read,
     petrel_pointset_read
 )
+
 from .file_read.las_read import readlasfile
 
 from .utils.errors import (
@@ -43,6 +48,7 @@ from .utils.validation import (
     validate_type,
     validate_required,
     validate_file_path,
+    validate_folder_path,
     validate_file_path_format
 )
 
@@ -58,15 +64,22 @@ from .conversions.conversions import (
 )
 
 from .volumetrics.giip_calc import (
-    calculate_giip
+    calculate_giip,
 )
+
+#from .volumetrics.hcpv_calc import (
+#    calculate_hcpv,
+#)
 
 __all__ = [
     "rotate_points",
     "create_grid_points",
     "meshgrid_properties","create_indexed_meshgrid"
-    "write_irap_ascii",
     
+    "write_irap_ascii",
+    "write_petrel_points",
+    "write_ffascii",
+
     "petrel_formtops_read",
     "inclination_xyz",
     "readlasfile",
@@ -76,11 +89,12 @@ __all__ = [
     "MyPackageError","ValidationError","ConfigurationError","DataError",
 
     "validate_number", "validate_string","validate_fraction","validate_equal","validate_pattern","validate_positive",
-    "validate_type","validate_required","validate_file_path","validate_file_path_format",
+    "validate_type","validate_required","validate_file_path","validate_folder_path","validate_file_path_format",
 
     "petrel_irap_classic_grid_read","petrel_formtops_read", "petrel_charisma_3d_read","petrel_pointset_read",
 
+    #"calculate_hcpv","calculate_giip",
     "calculate_giip",
 ]
 
-__version__ = "0.0.8"
+__version__ = "0.0.9"
